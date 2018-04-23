@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="timetable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="week">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="day" maxOccurs="5" minOccurs="5"> <!-- exactly 5 days in a week -->
+                  <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="class" minOccurs="0" maxOccurs="13"> <!-- between 0 and 13 classes in a day-->
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="time" maxOccurs="13"> <!-- minimum of 1 hour per class maximum of 13-->
+                            <xs:simpleType>
+                              <xs:restriction base="xs:unsignedInt"> <!-- restricting input for the time values -->
+                                <xs:enumeration value="800"/>
+                                <xs:enumeration value="900"/>
+                                <xs:enumeration value="1000"/>
+                                <xs:enumeration value="1100"/>
+                                <xs:enumeration value="1200"/>
+                                <xs:enumeration value="1300"/>
+                                <xs:enumeration value="1400"/>
+                                <xs:enumeration value="1500"/>
+                                <xs:enumeration value="1600"/>
+                                <xs:enumeration value="1700"/>
+                                <xs:enumeration value="1800"/>
+                                <xs:enumeration value="1900"/>
+                                <xs:enumeration value="2000"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="code" use="required"/> <!-- require attributes for each class -->
+                        <xs:attribute name="room" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="date" use="required"> <!-- required date attribute to identify day -->
+                    <xs:simpleType>
+                      <xs:restriction base="xs:ID">
+                        <xs:enumeration value="Monday"/>
+                        <xs:enumeration value="Tuesday"/>
+                        <xs:enumeration value="Wednesday"/>
+                        <xs:enumeration value="Thursday"/>
+                        <xs:enumeration value="Friday"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+      <xs:attribute name="program"/>
+      <xs:attribute name="school"/>
+      <xs:attribute name="term" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

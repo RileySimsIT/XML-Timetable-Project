@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--program name and school are not required -->
+<timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="instanceSchema.xsd"
+           name="Emily"
+           id="0123456"
+           term="f2017">
+  <!-- A week of class with exactly 5 days of the week-->
+  <week>
+    <day date="Monday">
+      <!--classes are optional and dont have to occur on a day-->
+    </day>
+    <day date="Tuesday">
+      <class code="ARTS-123" room="A1020">
+        <time>1100</time>
+      </class>
+    </day>
+    <day date="Wednesday">
+      <class code="ARTS-123" room="D1234">
+        <!--several occurances of time may occur for a class-->
+        <time>800</time>
+        <time>900</time>
+        <time>1000</time>
+        <time>1100</time>
+        <time>1200</time>
+      </class>
+    </day>
+    <day date="Thursday">
+      <class code="TEST-5678" room="b1075">
+        <time>2000</time>
+      </class>
+    </day>
+    <day date="Friday">
+      <class code="TEST-312" room="G1025">
+        <time>1500</time>
+        <time>1600</time>
+        <time>1700</time>
+      </class>
+    </day>
+  </week>
+</timetable>

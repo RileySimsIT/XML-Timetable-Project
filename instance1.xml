@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--program name and school are not required -->
+<timetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="instanceSchema.xsd"
+           name="Riley"
+           id="0746826"
+           program="IWD"
+           school="Fanshawe"
+           term="w2018">
+  <!-- A week of class with exactly 5 days of the week-->
+  <week>
+    <day date="Monday"> 
+      <class code="TEST-123" room="G1234">
+        <!--several occurances of time may occur for a class-->
+
+        <time>800</time>
+        <time>900</time>
+      </class>
+
+      <class code="TECH-1337" room="A1047">
+        <time>1400</time>
+        <time>1500</time>
+        <time>1600</time>
+      </class>
+    </day>
+    <day date="Tuesday">
+      <class code="INFO-1234" room="r1020">
+        <time>1100</time>
+        <time>1200</time>
+        <time>1300</time>
+        <time>1400</time>
+      </class>
+      <class code="TECH-192" room="r1020">
+        <!-- multiple classes at the same time doesn't overwrite the previous this can be easily changed but I left it in as a tool to show scheduling has been done wrong rather than overwriting-->
+        <time>1400</time> 
+        <time>1500</time>
+        <time>1600</time>
+      </class>
+      
+    </day>
+    <day date="Wednesday">
+      <!--classes are optional and dont have to occur on a day-->
+    </day>
+    <day date="Thursday">
+      <class code="TEST-5678" room="b1075">
+        <time>1200</time> <!-- doesn't matter what order the time slots are in-->
+        <time>1000</time>
+        <time>1100</time>
+      </class>
+    </day>
+    <day date="Friday">
+      <class code="INFO-1234" room="r1020">
+        <time>1100</time>
+        <time>1200</time>
+        <time>1300</time>
+        <time>1400</time>
+      </class>
+
+      <class code="TEST-123" room="G1234">
+        <time>800</time>
+        <time>900</time>
+      </class>
+    </day>
+  </week>  
+</timetable>
